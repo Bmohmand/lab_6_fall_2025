@@ -96,7 +96,7 @@ class KarelPupper:
 
 
         move_cmd = Twist()
-        move_cmd.linear.x = 0.0
+        move_cmd.linear.y = 0.0
         move_cmd.angular.z = 0.0
         # Alternate movement directions for a total of 1 second
         single_bob_duration = 0.5  # seconds per half-wiggle
@@ -105,7 +105,7 @@ class KarelPupper:
         start_time = time.time()
         direction = 1
         while time.time() - start_time < bob_time:
-            move_cmd.linear.y = direction * bob_speed
+            move_cmd.linear.x = direction * bob_speed
             self.publisher.publish(move_cmd)
             rclpy.spin_once(self.node, timeout_sec=0.01)
             time.sleep(single_bob_duration)
