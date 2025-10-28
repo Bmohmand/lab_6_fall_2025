@@ -100,7 +100,7 @@ class KarelPupper:
         move_cmd.angular.z = 0.0
         # Alternate movement directions for a total of 1 second
         single_bob_duration = 0.5  # seconds per half-wiggle
-        bob_speed = 0.75
+        bob_speed = 0.35
         
         start_time = time.time()
         direction = 1
