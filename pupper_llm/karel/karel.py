@@ -203,13 +203,10 @@ class KarelPupper:
         self.wiggle()
         self.turn_left()
         self.turn_right()
-        self.stop()
         self.bob()
-        self.stop()
         self.turn_left()
         self.turn_right()
         self.wiggle()
-        self.stop()
 
 
     def stop(self):
