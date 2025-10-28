@@ -167,6 +167,8 @@ class KarelPupper:
         self.turn_left()
         self.turn_right()
         self.stop()
+        self.bob()
+        self.stop()
         self.turn_left()
         self.turn_right()
         self.wiggle()
