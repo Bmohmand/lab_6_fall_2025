@@ -102,6 +102,7 @@ class KarelPupper:
         bob_speed = 0.75
         
         start_time = time.time()
+        direction = 1
         while time.time() - start_time < bob_time:
             move_cmd.linear.y = direction * bob_speed
             self.publisher.publish(move_cmd)
