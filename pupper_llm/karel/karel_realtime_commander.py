@@ -78,7 +78,7 @@ class KarelRealtimeCommanderNode(Node):
         #     ["move", "turn_left", "bark"]
 
         # Your code here:
-        pass
+        lines = msg.split("\n")
 
         
         if all_commands:
