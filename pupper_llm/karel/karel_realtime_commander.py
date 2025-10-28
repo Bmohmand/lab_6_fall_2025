@@ -78,7 +78,11 @@ class KarelRealtimeCommanderNode(Node):
         #     ["move", "turn_left", "bark"]
 
         # Your code here:
-        lines = msg.split("\n")
+        lines = response.split("\n")
+        for line in lines:
+            if line != "":
+                command = self.extract_commands_from_line(line.strip())
+                all_commands.append(command)
 
         
         if all_commands:
@@ -111,7 +115,20 @@ class KarelRealtimeCommanderNode(Node):
             line = "<move, turn_left>"
             returns ['move', 'turn_left']
         """
-        pass
+        command_dict = {
+            "move_forwards": "move_forward", 
+            "move_backwards": "move_backward", 
+            "move_left": "move_left", 
+            "move_right": "move_right", 
+            "turn_left": "turn_left", 
+            "turn_right": "turn_right", 
+            "bob": "bob", 
+            "wiggle": "wiggle", 
+            "dance": "dance",
+            "bark": "bark"
+        }
+        if line in command_dict:
+            return [command_dict[line]]
     
     async def execute_command(self, command: str) -> bool:
         """Execute a single robot command."""
