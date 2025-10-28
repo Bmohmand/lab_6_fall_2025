@@ -120,7 +120,7 @@ class KarelPupper:
         - Use the move() helper function that is implemented above, or manually construct move_cmd = Twist().
         - Publish the Twist command for a set duration, then stop.
         """
-        move(self, 1, 0, 0)
+        self.move(self, 1, 0, 0)
 
     def move_backward(self):
         """
@@ -129,7 +129,7 @@ class KarelPupper:
         - Use move() or create your own Twist message.
         - Be careful with speed—backward motion is often best slower.
         """
-        move(self, -1, 0, 0)
+        self.move(self, -1, 0, 0)
 
     def move_left(self):
         """
@@ -137,7 +137,7 @@ class KarelPupper:
         - Set an appropriate linear.y value for left strafe.
         - Use move() or build the move_cmd yourself.
         """
-        move(self, 0, 1, 0)
+        self.move(self, 0, 1, 0)
 
     def move_right(self):
         """
@@ -145,7 +145,7 @@ class KarelPupper:
         - Set an appropriate negative linear.y value for right strafe.
         - Use move() or create your own move_cmd.
         """
-        move(self, 0, -1, 0)
+        self.move(self, 0, -1, 0)
 
     def turn_left(self):
         """
@@ -153,7 +153,7 @@ class KarelPupper:
         - Set a positive angular.z value for left rotation.
         - Use move() or build your own move_cmd.
         """
-        move(self, 0, 0, 1)
+        self.move(self, 0, 0, 1)
 
     def turn_right(self):
         """
@@ -161,7 +161,7 @@ class KarelPupper:
         - Set a negative angular.z value for right rotation.
         - Use move() or make your own Twist message.
         """
-        move(self, 0, 0, -1)
+        self.move(self, 0, 0, -1)
 
     def bark(self):
         self.node.get_logger().info('Bark...')
