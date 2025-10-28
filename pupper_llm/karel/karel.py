@@ -95,7 +95,7 @@ class KarelPupper:
                 self.node.get_logger().warning(f"Could not play bob sound: {e}")
 
 
-        move_cmd = self.Twist()
+        move_cmd = Twist()
         move_cmd.linear.x = 0.0
         move_cmd.angular.z = 0.0
         # Alternate movement directions for a total of 1 second
