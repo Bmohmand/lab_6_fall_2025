@@ -90,7 +90,7 @@ class RealtimeVoiceNode(Node):
         Your ONLY job is to translate high-level natural language user instructions into a strict, line-by-line command list.
         Each command line corresponds to a discrete motion or action Pupper can execute.
         The list of valid commands is strictly limited to the following nine items:
-        [move_forwards, move_backwards, move_left, move_right, turn_left, turn_right, bob, wiggle, dance].
+        [move_forwards, move_backwards, move_left, move_right, turn_left, turn_right, bob, wiggle, dance, bark].
 
         You must NEVER invent new commands.
         You must NEVER include any words, punctuation, or commentary outside of the command list.
