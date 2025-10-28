@@ -82,7 +82,7 @@ class KarelRealtimeCommanderNode(Node):
         for line in lines:
             if line != "":
                 command = self.extract_commands_from_line(line.strip())
-                all_commands.append(command)
+                all_commands.append(command[0])
 
         
         if all_commands:
