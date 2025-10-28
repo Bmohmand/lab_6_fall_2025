@@ -163,7 +163,14 @@ class KarelPupper:
         # TODO: Create your own awesome Pupper dance move sequence here!
         # Use combinations of self.wiggle(), self.turn_left(), self.turn_right(), self.bob(), and self.stop().
         # Be creative and choreograph the most exciting dance possible!
-        pass
+        self.wiggle()
+        self.turn_left()
+        self.turn_right()
+        self.stop()
+        self.turn_left()
+        self.turn_right()
+        self.wiggle()
+        self.stop()
 
 
     def stop(self):
