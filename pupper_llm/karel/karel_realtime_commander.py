@@ -136,6 +136,7 @@ class KarelRealtimeCommanderNode(Node):
         if matches:
             # regex used IGNORECASE; preserve the canonical key by lowercasing match
             mapped = [command_dict[m.lower()] for m in matches]
+            logger.info("Extracted commands from line %r: %r", line, mapped)
             return mapped
         
         logger.info("ERROR: INVALID OR NO COMMAND TOKENS FOUND in sentence: %r", line)
