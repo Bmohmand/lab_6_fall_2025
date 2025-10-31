@@ -127,10 +127,19 @@ class KarelRealtimeCommanderNode(Node):
             "dance": "dance",
             "bark": "bark"
         }
-        if line in command_dict:
-            return [command_dict[line]]
-        else:
-            logger.info("ERROR: INVALID COMMAND ENTERED")
+
+        _ALLOWED_TOKENS = sorted(command_dict.keys(), key=lambda s: -len(s))  # longer first (safety)
+        _TOKEN_REGEX = re.compile(r'\b(' + '|'.join(map(re.escape, _ALLOWED_TOKENS)) + r')\b', flags=re.IGNORECASE)
+
+        line = line.strip()
+        matches = _TOKEN_REGEX.findall(line)
+        if matches:
+            # regex used IGNORECASE; preserve the canonical key by lowercasing match
+            mapped = [command_dict[m.lower()] for m in matches]
+            return mapped
+        
+        logger.info("ERROR: INVALID OR NO COMMAND TOKENS FOUND in sentence: %r", line)
+        return []
     
     async def execute_command(self, command: str) -> bool:
         """Execute a single robot command."""
