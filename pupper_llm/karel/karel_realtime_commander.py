@@ -80,9 +80,11 @@ class KarelRealtimeCommanderNode(Node):
         # Your code here:
         lines = response.split("\n")
         for line in lines:
-            if line != "":
-                command = self.extract_commands_from_line(line.strip())
-                all_commands.append(command[0])
+            if line: 
+                commands_from_line = self.extract_commands_from_line(line)
+                # Use .extend() to add ALL commands from that list
+                if commands_from_line:
+                    all_commands.extend(commands_from_line)
 
         
         if all_commands:
